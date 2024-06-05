@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volume Control</title>
+    <title>The Noise Chamber</title>
     <style>
         body {
             display: flex;
@@ -19,6 +19,8 @@
         .container {
             text-align: center;
             color: #676e8f;
+            position: absolute;
+            top: 5%;
         }
 
         .slider {
@@ -84,11 +86,41 @@
             <source src="fireplace.wav" type="audio/wav">
         </audio>
         <input type="range" id="volumeSlider4" class="slider" min="0" max="100" value="0">
-        <h1>Pogo Stick</h1>
+        <h1>Wind</h1>
         <audio id="audio5" loop>
-            <source src="pogostick.wav" type="audio/wav">
+            <source src="wind.wav" type="audio/wav">
         </audio>
         <input type="range" id="volumeSlider5" class="slider" min="0" max="100" value="0">
+        <h1>Wind Chime</h1>
+        <audio id="audio6" loop>
+            <source src="wind-chime.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider6" class="slider" min="0" max="100" value="0">
+        <h1>Waterfall</h1>
+        <audio id="audio7" loop>
+            <source src="waterfall.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider7" class="slider" min="0" max="100" value="0">
+        <h1>Jungle at Night</h1>
+        <audio id="audio8" loop>
+            <source src="jungle.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider8" class="slider" min="0" max="100" value="0">
+        <h1>Pogo Stick</h1>
+        <audio id="audio9" loop>
+            <source src="pogostick.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider9" class="slider" min="0" max="100" value="0">
+        <h1>Herd of sheep</h1>
+        <audio id="audio10" loop>
+            <source src="sheep.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider10" class="slider" min="0" max="100" value="0">
+        <h1>Cheetos</h1>
+        <audio id="audio11" loop>
+            <source src="cheetos.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider11" class="slider" min="0" max="100" value="0">
         <br>
         <h1>- - - - - - - - - - - - - - - -</h1>
         <button onclick="volumeDown()" class="btn container"><h2>Mute All</h2></button>
@@ -96,7 +128,7 @@
 
     <script>
         // Get references to the audio element and the slider
-        const sounds = 5;
+        const sounds = 11;
 
         for (var x = 1; x <= sounds; x++) {
             const newAudio = document.getElementById('audio' + x);
