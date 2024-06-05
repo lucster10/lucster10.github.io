@@ -23,16 +23,25 @@
             top: 5%;
         }
 
+        .attribs {
+            background: #8ea9b4;
+            color: #5e6585
+        }
+
+        a:link { color: #4b557a}
+
+        a:visited { color: #694b7a}
+
         .slider {
             -webkit-appearance: none;
             appearance: none;
             width: 300px;
-            height: 10px;
+            height: 20px;
             background: #676e8f;
             outline: none;
             opacity: 0.7;
             transition: opacity 0.2s;
-            border-radius: 5px;
+            border-radius: 10px;
         }
 
         .slider:hover {
@@ -40,8 +49,8 @@
         }
 
         .slider::-moz-range-thumb {
-            width: 15px;
-            height: 15px;
+            width: 18px;
+            height: 18px;
             background: #99bce4;
             cursor: pointer;
             border-radius: 50%;
@@ -106,9 +115,9 @@
             <source src="jungle.wav" type="audio/wav">
         </audio>
         <input type="range" id="volumeSlider8" class="slider" min="0" max="100" value="0">
-        <h1>Pogo Stick</h1>
+        <h1>Air Conditioning</h1>
         <audio id="audio9" loop>
-            <source src="pogostick.wav" type="audio/wav">
+            <source src="ac.wav" type="audio/wav">
         </audio>
         <input type="range" id="volumeSlider9" class="slider" min="0" max="100" value="0">
         <h1>Herd of sheep</h1>
@@ -116,19 +125,52 @@
             <source src="sheep.wav" type="audio/wav">
         </audio>
         <input type="range" id="volumeSlider10" class="slider" min="0" max="100" value="0">
-        <h1>Cheetos</h1>
+        <h1>Pogo Stick</h1>
         <audio id="audio11" loop>
-            <source src="cheetos.wav" type="audio/wav">
+            <source src="pogostick.wav" type="audio/wav">
         </audio>
         <input type="range" id="volumeSlider11" class="slider" min="0" max="100" value="0">
+        <h1>FNAF Office Noises</h1>
+        <audio id="audio12" loop>
+            <source src="fnaf-ambience.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider12" class="slider" min="0" max="100" value="0">
+        <h1>Laughter</h1>
+        <audio id="audio13" loop>
+            <source src="laughter.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider13" class="slider" min="0" max="100" value="0">
+        <h1>Cheetos</h1>
+        <audio id="audio14" loop>
+            <source src="cheetos.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider14" class="slider" min="0" max="100" value="0">
+        <h1>Shovel</h1>
+        <audio id="audio15" loop>
+            <source src="digging.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider15" class="slider" min="0" max="100" value="0">
+        <h1>Jet Engine</h1>
+        <audio id="audio16" loop>
+            <source src="jet-engine.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider16" class="slider" min="0" max="100" value="0">
         <br>
         <h1>- - - - - - - - - - - - - - - -</h1>
         <button onclick="volumeDown()" class="btn container"><h2>Mute All</h2></button>
+        <br>
+        <div class="attribs">
+            <a href="https://freesound.org/people/newlocknew/sounds/730342/">FIREBurn_Fireplace.Artificial.Close.Crackling.Flame roar.Dry 1_EM</a> by <a href="https://freesound.org/people/newlocknew/">newlocknew</a> | License: <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0</a>
+            <a href="https://freesound.org/people/CGEffex/sounds/94181/">Using pogo stick.wav</a> by <a href="https://freesound.org/people/CGEffex/">CGEffex</a> | License: <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0</a>
+            <a href="https://freesound.org/people/lunches/sounds/165878/">cheetos.wav</a> by <a href="https://freesound.org/people/lunches/">lunches</a> | License: <a href="http://creativecommons.org/licenses/by/3.0/">Attribution 3.0</a>
+            <a href="https://freesound.org/people/Owl/sounds/156524/">Kvarnbo falls 1.wav</a> by <a href="https://freesound.org/people/Owl/">Owl</a> | License: <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0</a>
+            <a href="https://freesound.org/people/vumseplutten1709/sounds/219435/">startupjetengine.wav</a> by <a href="https://freesound.org/people/vumseplutten1709/">vumseplutten1709</a> | License: <a href="http://creativecommons.org/licenses/by/3.0/">Attribution 3.0</a>
+        </div>
     </div>
-
+    
     <script>
         // Get references to the audio element and the slider
-        const sounds = 11;
+        const sounds = 16;
 
         for (var x = 1; x <= sounds; x++) {
             const newAudio = document.getElementById('audio' + x);
