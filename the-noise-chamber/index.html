@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume Control</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #99b6c2;
+        }
+
+        .container {
+            text-align: center;
+            color: #676e8f;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 300px;
+            height: 10px;
+            background: #676e8f;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+            border-radius: 5px;
+        }
+
+        .slider:hover {
+            opacity: 0.9;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            background: #99bce4;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 2px solid #333;
+        }
+
+        .btn {
+            border: none;
+            background-color: #676e8f00;
+            transition: background-color 0.2s;
+            padding: 0px 20px;
+            font-size: 16px;
+            position: relative;
+            top: -15px;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background-color: rgba(103, 110, 143, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rain</h1>
+        <audio id="audio1" loop>
+            <source src="rain.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider1" class="slider" min="0" max="100" value="0">
+        <h1>Thunder</h1>
+        <audio id="audio2" loop>
+            <source src="thunder.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider2" class="slider" min="0" max="100" value="0">
+        <h1>Coffee Shop</h1>
+        <audio id="audio3" loop>
+            <source src="coffee.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider3" class="slider" min="0" max="100" value="0">
+        <h1>Fireplace</h1>
+        <audio id="audio4" loop>
+            <source src="fireplace.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider4" class="slider" min="0" max="100" value="0">
+        <h1>Pogo Stick</h1>
+        <audio id="audio5" loop>
+            <source src="pogostick.wav" type="audio/wav">
+        </audio>
+        <input type="range" id="volumeSlider5" class="slider" min="0" max="100" value="0">
+        <br>
+        <h1>- - - - - - - - - - - - - - - -</h1>
+        <button onclick="volumeDown()" class="btn container"><h2>Mute All</h2></button>
+    </div>
+
+    <script>
+        // Get references to the audio element and the slider
+        const sounds = 5;
+
+        for (var x = 1; x <= sounds; x++) {
+            const newAudio = document.getElementById('audio' + x);
+            const slider = document.getElementById('volumeSlider' + x);
+            console.log(newAudio, slider);
+            // Function to set the volume based on the slider value
+            const setVolume = () => {
+                newAudio.volume = slider.value / 100;
+            };
+
+            // Initialize volume and add event listener to the slider
+            newAudio.volume = slider.value / 100;
+            slider.addEventListener('input', setVolume);
+
+            // Start playing the audio
+            newAudio.play();
+        };
+
+        function volumeDown() {
+            for (var x = 1; x <= sounds; x++) {
+                const newAudio = document.getElementById('audio' + x);
+                const slider = document.getElementById('volumeSlider' + x);
+                slider.value = 0;
+                newAudio.volume = 0;
+            }
+        }
+    </script>
+</body>
+</html>
