@@ -15,9 +15,7 @@ function updateImageTransform() {
 }
 
 window.onload = () => {
-  img.onload = () => {
     updateImageTransform();
-  };
 };
 
 img.addEventListener('wheel', (event) => {
