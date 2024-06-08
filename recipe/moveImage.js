@@ -14,8 +14,10 @@ function updateImageTransform() {
   img.style.transform = `scale(${scale})`;
 }
 
-img.onload = () => {
-  updateImageTransform();
+window.onload = () => {
+  img.onload = () => {
+    updateImageTransform();
+  };
 };
 
 img.addEventListener('wheel', (event) => {
