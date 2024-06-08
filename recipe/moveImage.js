@@ -4,7 +4,7 @@ let gMouseDownOffsetX = 0;
 let gMouseDownOffsetY = 0;
 
 const img = document.getElementById('cursorImage');
-let scale = 0.1;
+let scale = 0.5;
 const scaleStep = 0.1;
 const minScale = 0.1;
 const maxScale = 5;
